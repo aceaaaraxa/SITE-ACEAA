@@ -1,0 +1,806 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACEAA - Associação de Ciclismo e Esportes de Aventura - Araxá/MG</title>
+    <meta name="description" content="ACEAA Araxá - Associação de Ciclismo e Esportes de Aventura. Promovemos atividades de aventura com foco em segurança, saúde e comunidade em Araxá/MG.">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Header Principal */
+        .top-bar {
+            background: linear-gradient(135deg, #1a365d 0%, #2d5aa0 100%);
+            color: white;
+            padding: 8px 0;
+            font-size: 0.9em;
+        }
+
+        .top-bar .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 20px;
+        }
+
+        .contact-info span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 10px;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.1em;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #4caf50;
+        }
+
+        /* Header Principal */
+        header {
+            background: white;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #2196f3, #4caf50);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.8em;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(33, 150, 243, 0.3);
+        }
+
+        .logo-text h1 {
+            font-family: 'Fredoka', cursive;
+            font-size: 2.2em;
+            color: #1a365d;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .logo-text p {
+            color: #666;
+            font-size: 0.95em;
+            font-weight: 400;
+        }
+
+        /* Navegação */
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            padding: 10px 15px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        nav a:hover {
+            background: linear-gradient(135deg, #2196f3, #4caf50);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(26, 54, 93, 0.9), rgba(45, 90, 160, 0.8)),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><path d="M0,300 Q300,100 600,300 T1200,300 L1200,600 L0,600 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: cover;
+            background-attachment: fixed;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60"><g fill="none" fill-rule="evenodd"><g fill="rgba(255,255,255,0.05)" fill-opacity="0.4"><circle cx="30" cy="30" r="2"/></g></svg>');
+            animation: movePattern 20s linear infinite;
+        }
+
+        @keyframes movePattern {
+            0% { transform: translateX(0) translateY(0); }
+            100% { transform: translateX(60px) translateY(60px); }
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h2 {
+            font-family: 'Fredoka', cursive;
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #4caf50, #8bc34a);
+            color: white;
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(76, 175, 80, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(76, 175, 80, 0.4);
+        }
+
+        /* Container padrão */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Seções */
+        section {
+            padding: 80px 0;
+            position: relative;
+        }
+
+        section:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-family: 'Fredoka', cursive;
+            font-size: 2.8em;
+            color: #1a365d;
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(135deg, #2196f3, #4caf50);
+            border-radius: 2px;
+        }
+
+        .section-header p {
+            font-size: 1.2em;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Cards de Atividades */
+        .activities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .activity-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .activity-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: var(--card-color);
+        }
+
+        .activity-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        .activity-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--card-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 2em;
+            color: white;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+
+        .activity-card h3 {
+            font-size: 1.5em;
+            color: #333;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .activity-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Formulário */
+        .form-section {
+            background: linear-gradient(135deg, #1a365d, #2d5aa0);
+            color: white;
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+        }
+
+        .form-container h2 {
+            color: #1a365d;
+            text-align: center;
+            margin-bottom: 30px;
+            font-family: 'Fredoka', cursive;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #333;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1em;
+            transition: all 0.3s ease;
+            background: white;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #2196f3;
+            box-shadow: 0 0 20px rgba(33, 150, 243, 0.2);
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: linear-gradient(135deg, #2196f3, #4caf50);
+            color: white;
+            padding: 18px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(33, 150, 243, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: #1a365d;
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3 {
+            font-family: 'Fredoka', cursive;
+            font-size: 1.3em;
+            margin-bottom: 20px;
+            color: #4caf50;
+        }
+
+        .footer-section p, .footer-section li {
+            color: #b0c4de;
+            margin-bottom: 10px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section a {
+            color: #b0c4de;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #4caf50;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #2d5aa0;
+            padding-top: 30px;
+            text-align: center;
+            color: #b0c4de;
+        }
+
+        /* Menu Mobile */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5em;
+            color: #333;
+            cursor: pointer;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+                position: absolute;
+                right: 20px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
+            nav ul {
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+                padding: 20px;
+                display: none;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            .hero h2 {
+                font-size: 2.5em;
+            }
+
+            .hero p {
+                font-size: 1.1em;
+            }
+
+            .top-bar .container {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .form-container {
+                margin: 0 20px;
+                padding: 30px 20px;
+            }
+        }
+
+        /* Animações */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Loading animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,.3);
+            border-radius: 50%;
+            border-top: 3px solid #fff;
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Barra Superior -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="contact-info">
+                <span><i class="fas fa-envelope"></i> aceaaaraxa@gmail.com</span>
+                <span><i class="fas fa-phone"></i> (34) 99999-9999</span>
+                <span><i class="fas fa-map-marker-alt"></i> Araxá, MG</span>
+            </div>
+            <div class="social-links">
+                <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://instagram.com/aceaa.araxa" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header Principal -->
+    <header>
+        <div class="header-content">
+            <div class="logo-section">
+                <div class="logo">
+                    <img src="aceaalogo.png" alt="Logo ACEAA" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>ACEAA</h1>
+                    <p>Associação de Ciclismo e Esportes de Aventura de Araxá</p>
+                </div>
+            </div>
+
+            <nav>
+                <ul id="nav-menu">
+                    <li><a href="#sobre"><i class="fas fa-info-circle"></i> Sobre</a></li>
+                    <li><a href="#atividades"><i class="fas fa-hiking"></i> Atividades</a></li>
+                    <li><a href="#cadastro"><i class="fas fa-user-plus"></i> Cadastro</a></li>
+                    <li><a href="#contato"><i class="fas fa-envelope"></i> Contato</a></li>
+                </ul>
+            </nav>
+
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Viva a Aventura em Araxá</h2>
+            <p>Junte-se à maior associação de esportes de aventura da região. Promovemos atividades seguras, saudáveis e divertidas para toda a comunidade.</p>
+            <a href="#cadastro" class="cta-button">
+                <i class="fas fa-rocket"></i> Participe Agora
+            </a>
+        </div>
+    </section>
+
+    <!-- Sobre -->
+    <section id="sobre" class="fade-in">
+        <div class="container">
+            <div class="section-header">
+                <h2>Quem Somos</h2>
+                <p>A ACEAA é uma associação esportiva dedicada a promover o ciclismo e esportes de aventura em Araxá e região, priorizando sempre a segurança, saúde e o espírito de comunidade.</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-top: 50px;">
+                <div style="text-align: center; padding: 30px;">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #2196f3, #4caf50); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; color: white; font-size: 2em;">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Segurança</h3>
+                    <p>Priorizamos a segurança em todas as nossas atividades com equipamentos adequados e instrutores qualificados.</p>
+                </div>
+                
+                <div style="text-align: center; padding: 30px;">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #4caf50, #8bc34a); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; color: white; font-size: 2em;">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Saúde</h3>
+                    <p>Promovemos atividades físicas que contribuem para o bem-estar e qualidade de vida dos participantes.</p>
+                </div>
+                
+                <div style="text-align: center; padding: 30px;">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #ff9800, #ffc107); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; color: white; font-size: 2em;">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Comunidade</h3>
+                    <p>Fortalecemos os laços comunitários através do esporte e da aventura compartilhada.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Atividades -->
+    <section id="atividades" class="fade-in">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nossas Atividades</h2>
+                <p>Oferecemos uma variedade de esportes de aventura para todos os níveis e idades</p>
+            </div>
+
+            <div class="activities-grid">
+                <div class="activity-card" style="--card-color: #2196f3;">
+                    <div class="activity-icon">
+                        <i class="fas fa-running"></i>
+                    </div>
+                    <h3>Corrida</h3>
+                    <p>Grupos de corrida para iniciantes e avançados, com treinos regulares e participação em competições regionais.</p>
+                </div>
+
+                <div class="activity-card" style="--card-color: #4caf50;">
+                    <div class="activity-icon">
+                        <i class="fas fa-biking"></i>
+                    </div>
+                    <h3>Ciclismo</h3>
+                    <p>Pedais recreativos e competitivos, explorando as belas paisagens de Araxá e região com segurança total.</p>
+                </div>
+
+                <div class="activity-card" style="--card-color: #ffc107;">
+                    <div class="activity-icon">
+                        <i class="fas fa-mountain"></i>
+                    </div>
+                    <h3>Escalada</h3>
+                    <p>Escalada em rocha natural e artificial, com equipamentos profissionais e instrutores certificados.</p>
+                </div>
+
+                <div class="activity-card" style="--card-color: #f44336;">
+                    <div class="activity-icon">
+                        <i class="fas fa-parachute-box"></i>
+                    </div>
+                    <h3>Rapel</h3>
+                    <p>Descidas em rapel em locais seguros e deslumbrantes, proporcionando adrenalina e contato com a natureza.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cadastro -->
+    <section id="cadastro" class="form-section fade-in">
+        <div class="container">
+            <div class="section-header">
+                <h2 style="color: white;">Cadastro de Participantes</h2>
+                <p style="color: rgba(255,255,255,0.9);">Faça parte da nossa comunidade de aventureiros</p>
+            </div>
+
+            <div class="form-container">
+                <h2>Inscreva-se Agora</h2>
+                <form id="formulario">
+                    <div class="form-group">
+                        <label for="nome">Nome Completo *</label>
+                        <input type="text" id="nome" name="nome" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contato">Telefone/WhatsApp *</label>
+                        <input type="tel" id="contato" name="contato" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="emergencia">Contato de Emergência *</label>
+                        <input type="text" id="emergencia" name="emergencia" required>
+                    </div>
+
+                    <button type="submit" class="submit-btn">
+                        <span class="btn-text">Cadastrar</span>
+                        <span class="loading" style="display: none;"></span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contato">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>ACEAA Araxá</h3>
+                    <p>Associação de Ciclismo e Esportes de Aventura de Araxá, promovendo saúde, segurança e comunidade através do esporte.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <p><i class="fas fa-envelope"></i> aceaaaraxa@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> (34) 99999-9999</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Araxá, Minas Gerais</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Redes Sociais</h3>
+                    <p>Siga-nos nas redes sociais para ficar por dentro de todas as novidades e eventos da ACEAA.</p>
+                    <div class="social-links" style="margin-top: 15px;">
+                        <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://instagram.com/aceaa.araxa" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 ACEAA Araxá - Site elaborado pelos alunos da IFTM do curso de Ciência de Computação. </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Menu Mobile
+        function toggleMobileMenu() {
+            const menu = document.getElementById('nav-menu');
+            menu.classList.toggle('active');
+        }
+
+        // Animação de entrada
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Formulário
+        document.getElementById('formulario').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const submitBtn = this.querySelector('.submit-btn');
+            const btnText = submitBtn.querySelector('.btn-text');
+            const loading = submitBtn.querySelector('.loading');
+            
+            // Mostrar loading
+            btnText.style.display = 'none';
+            loading.style.display = 'inline-block';
+            submitBtn.disabled = true;
+            
+            // Simular envio
+            setTimeout(() => {
+                alert('Cadastro realizado com sucesso! Entraremos em contato em breve.');
+                this.reset();
+                
+                // Restaurar botão
+                btnText.style.display = 'inline';
+                loading.style.display = 'none';
+                submitBtn.disabled = false;
+            }, 2000);
+        });
+
+        // Smooth scroll para links internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+                
+                // Fechar menu mobile se estiver aberto
+                const menu = document.getElementById('nav-menu');
+                menu.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
+
